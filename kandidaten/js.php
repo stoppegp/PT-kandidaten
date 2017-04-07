@@ -63,19 +63,22 @@ jQuery(document).ready(function($){
                 result.id = "wkf" + c0 + "result";
                 container.append(result);
                 container.children("#wkf" + c0 + "result").addClass("wkf_result");
-                if ('object' == typeof kandidaten[wahl][sub]) {
-                    if ('undefined' != typeof kandidaten[wahl][sub]['uu'][wahl]) {
-                        var content = text_uu;
-                        content = content.replace("{wknr}", sub).replace("{wkname}", value).replace("{kandidat}", kandidaten[wahl][sub]['name']).replace("{uu}", kandidaten[wahl][sub]['uu'][wahl]);
+                if ('undefined' != typeof wk[wahl][sub]) {
+                    var wkname = wk[wahl][sub];
+                    if ('object' == typeof kandidaten[wahl][sub]) {
+                        if ('undefined' != typeof kandidaten[wahl][sub]['uu'][wahl]) {
+                            var content = text_uu;
+                            content = content.replace("{wknr}", sub).replace("{wkname}", wkname).replace("{kandidat}", kandidaten[wahl][sub]['name']).replace("{uu}", kandidaten[wahl][sub]['uu'][wahl]);
+                        } else {
+                            var content = text_nouu;
+                            content = content.replace("{wknr}", sub).replace("{wkname}", wkname).replace("{kandidat}", kandidaten[wahl][sub]['name']);
+                        }
                     } else {
-                        var content = text_nouu;
-                        content = content.replace("{wknr}", sub).replace("{wkname}", value).replace("{kandidat}", kandidaten[wahl][sub]['name']);
+                        var content = text_nok;
+                        content = content.replace("{wknr}", sub).replace("{wkname}", wkname);
                     }
-                } else {
-                    var content = text_nok;
-                    content = content.replace("{wknr}", sub).replace("{wkname}", value);
+                    container.children("#wkf" + c0 + "result").html(content);
                 }
-                container.children("#wkf" + c0 + "result").html(content);
             }
 
         }

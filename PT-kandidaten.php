@@ -2,8 +2,8 @@
 /*
 Plugin Name: Piraten-Tools / Kandidaten
 Plugin URI: https://github.com/stoppegp/PT-kandidaten
-Description: -
-Version: 0.0.1
+Description: Dieses Plugin stellt eine tabellarische Übersicht von Kandidaten sowie einen Wahlkreisfindet zur Verfügung.
+Version: 0.1
 Author: @stoppegp
 Author URI: http://stoppe-gp.de
 */
@@ -11,7 +11,7 @@ Author URI: http://stoppe-gp.de
 global $PT_infos;
 $PT_infos[] = array(
 	'name'		=>		'Kandidaten',
-	'desc'		=>		'Infos tbd',
+	'desc'		=>		'Dieses Plugin stellt eine tabellarische Übersicht von Kandidaten sowie einen Wahlkreisfindet zur Verfügung. Weitere Einstellungen im Menüpunkt "Kandidaten".',
 );
 
 require('mainmenu.php');
