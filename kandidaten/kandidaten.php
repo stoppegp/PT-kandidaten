@@ -32,7 +32,8 @@ class PT_kandidaten {
 
         if (!is_array(self::$kandidaten)) { 
             $args = array(
-                'post_type'=> 'pt_kandidaten'
+                'post_type'=> 'pt_kandidaten',
+                'posts_per_page' => -1
                 );              
 
             $the_query = new WP_Query( $args );
