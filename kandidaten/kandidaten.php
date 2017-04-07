@@ -38,9 +38,9 @@ class PT_kandidaten {
 
             $the_query = new WP_Query( $args );
             $data = $the_query->posts;
-            $wks = array();
-            $uus = array();
             foreach ($data as $key => $val) {
+                $wks = array();
+                $uus = array();
                 self::$kandidaten[$key]['name'] = $val->post_title;
                 foreach (array_keys(self::$wahlen) as $wahl0) {
                     $wk = get_post_meta($val->ID, '_wk_'.$wahl0, true);
