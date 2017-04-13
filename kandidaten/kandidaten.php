@@ -13,7 +13,7 @@ class PT_kandidaten {
     static function getWk($wahl) {
         if (!in_array($wahl, array_keys(self::$wahlen))) return false;
         if (!is_array(self::$wk[$wahl])) { 
-            $data = file_get_contents(plugin_dir_path(__FILE__)."wk-".$wahl.".json");
+            $data = file_get_contents(plugin_dir_path(__FILE__)."json/".$wahl."/wk.json");
             self::$wk[$wahl] = JSON_decode($data);
         }
         return self::$wk[$wahl];
@@ -21,7 +21,7 @@ class PT_kandidaten {
     static function getOrte($wahl) {
         if (!in_array($wahl, array_keys(self::$wahlen))) return false;
         if (!is_array(self::$orte[$wahl])) { 
-            $data = file_get_contents(plugin_dir_path(__FILE__)."orte-".$wahl.".json");
+            $data = file_get_contents(plugin_dir_path(__FILE__)."json/".$wahl."/orte.json");
             self::$orte[$wahl] = JSON_decode($data);
         }
         return self::$orte[$wahl];
