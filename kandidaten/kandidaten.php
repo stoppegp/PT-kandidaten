@@ -7,7 +7,7 @@ class PT_kandidaten {
     private static $orte;
     private static $kandidaten;
     private static $kandidatenNW;
-    private static $wahlen = array("btw" => "Bundestagswahl");
+    private static $wahlen = array("ltwbw" => "Landtagswahl BW", "btw" => "Bundestagswahl");
     private static $incJS = array();
 
     static function getWk($wahl) {
